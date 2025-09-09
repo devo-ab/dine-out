@@ -17,6 +17,8 @@ const defaultOrders = [
   { id: 5, name: "Ferdous", items: 5, amount: 123123, status: "PENDING" },
 ];
 
+// item list
+
 const itemsList = [
   {
     name: "Hamburger",
