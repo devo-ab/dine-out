@@ -3,9 +3,11 @@ import OrderMain from "./components/OrderMain";
 
 function App() {
   return (
-    <div className="container mx-auto px-4  flex flex-col">
+    <div className="container mx-auto px-4 h-screen flex flex-col">
       <Header></Header>
-      <OrderMain></OrderMain>
+      <div className="flex-1 overflow-auto">
+        <OrderMain />
+      </div>
     </div>
   );
 }
