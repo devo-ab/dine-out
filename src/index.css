@@ -1,5 +1,59 @@
 @import "tailwindcss";
 
+/* Responsive table: stack rows on small screens, full table on md+ */
+.responsive-table thead {
+    display: none;
+    /* hide header on small screens */
+}
+
+.responsive-table tbody tr {
+    display: block;
+    border-bottom: 1px solid #374151;
+    /* tailwind gray-700 */
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+}
+
+.responsive-table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    align-items: center;
+}
+
+/* show header-like label before each cell (only on small screens) */
+.responsive-table td::before {
+    content: attr(data-label) ":";
+    font-weight: 600;
+    margin-right: 0.75rem;
+    color: #9ca3af;
+    /* tailwind gray-400 */
+    white-space: nowrap;
+}
+
+/* restore normal table display at md and up */
+@media (min-width: 768px) {
+    .responsive-table thead {
+        display: table-header-group;
+    }
+
+    .responsive-table tbody tr {
+        display: table-row;
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .responsive-table td {
+        display: table-cell;
+        padding: .75rem;
+    }
+
+    .responsive-table td::before {
+        content: none;
+    }
+}
+
 :root {
     --color-primary: #FF602C;
     --color-background: #1D1D1D;
