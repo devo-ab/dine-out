@@ -10,11 +10,11 @@ import OrderItem from "./orderCard/OrderItem";
 import OrderTable from "./orderCard/OrderTable";
 
 const defaultOrders = [
-  { id: 1, name: "Sumit Saha", items: 5, amount: 123123, status: "PENDING" },
-  { id: 2, name: "Akash Ahmed", items: 5, amount: 123123, status: "DELIVERED" },
-  { id: 3, name: "Saad Hasan", items: 5, amount: 123123, status: "PENDING" },
-  { id: 4, name: "MD Salahuddin", items: 5, amount: 123123, status: "PENDING" },
-  { id: 5, name: "Ferdous", items: 5, amount: 123123, status: "PENDING" },
+  { id: 1, name: "Munna", items: 5, amount: 123123, status: "PENDING" },
+  { id: 2, name: "Ahad", items: 5, amount: 123123, status: "DELIVERED" },
+  { id: 3, name: "Somrat", items: 5, amount: 123123, status: "PENDING" },
+  { id: 4, name: "Partho", items: 5, amount: 123123, status: "PENDING" },
+  { id: 5, name: "Shimul", items: 5, amount: 123123, status: "PENDING" },
 ];
 
 // item list
