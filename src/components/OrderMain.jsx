@@ -120,7 +120,7 @@ export default function OrderMain() {
   // place order
   const placeOrder = () => {
     const newOrder = {
-      id:  orders.length + 1,
+      id: orders.length + 1,
       name: name,
       items: orderList.length,
       amount: amount,
@@ -133,7 +133,8 @@ export default function OrderMain() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 flex-grow text-white">
-      <div className="bg-cardbg rounded-lg p-6 h-[calc(100vh_-_130px)]">
+      {/* Create Order Section */}
+      <div className="bg-cardbg rounded-lg p-6 min-h-[400px] md:h-[calc(100vh_-_130px)]">
         <h2 className="text-xl font-bold mb-1">CREATE ORDER</h2>
         <p className="text-gray-400 text-sm mb-4">
           Accurately fulfill customer orders based on a precise understanding of their requirements.
@@ -156,31 +157,29 @@ export default function OrderMain() {
         >
           Place Order ({amount})
         </button>
-        {/* Place Order Button Start*/}
+        {/* Place Order Button End*/}
       </div>
 
-      {/* order dashboard start */}
-      <div className="md:col-span-2 h-[calc(100vh_-_130px)]">
-        {/* Order Summary Start*/}
+      {/* Order Dashboard */}
+      <div className="md:col-span-2 min-h-[400px] md:h-[calc(100vh_-_130px)] flex flex-col">
+        {/* Order Summary */}
         <div>
           <h2 className="text-xl font-bold mb-4">Order Summary</h2>
-          <div className="grid grid-cols-3 gap-4 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
             <SummaryCard color={"yellow"} count={totalCount} label="Total Order" />
             <SummaryCard color="red" count={pendingCount} label="Pending" />
             <SummaryCard color="green" count={deliveredCount} label="Delivered" />
           </div>
         </div>
-        {/* Order Summary End*/}
 
         {/* Order Reports */}
-        <div>
-          <div className="flex justify-between">
-            <h2 className="text-xl font-bold mb-4">Order Reports</h2>
-            <div className="flex gap-4 items-center">
-              <FilterOrder onFilter={handleFilter}></FilterOrder>
-            </div>
+        <div className="flex-1 flex flex-col">
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
+            <h2 className="text-xl font-bold">Order Reports</h2>
+            <FilterOrder onFilter={handleFilter}></FilterOrder>
           </div>
-          <div className="bg-cardbg rounded-lg p-4">
+
+          <div className="bg-cardbg rounded-lg p-4 mt-4 flex-1 overflow-auto">
             <div className="reports-container overflow-x-auto">
               <OrderTable
                 orders={orders}
@@ -191,7 +190,6 @@ export default function OrderMain() {
           </div>
         </div>
       </div>
-      {/* order dashboard end */}
     </div>
   );
 }
